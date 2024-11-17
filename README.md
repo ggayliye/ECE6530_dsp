@@ -4,7 +4,75 @@
 Authors : Kyle G. Gayliyev, Skylar Stockham, Eddie Franco  <br>
 Course: ECE 5530 / ECE 6530 - Digital Signal Processing, ECE Department, The University of Utah<br>
 Repo: https://github.com/ggayliye/ECE6530_dsp <br>
-Copyright: ECE 6530, Kyle G. Gayliyev - This work may not be copied for use in Academic Coursework.
+Copyright: ECE 6530, Kyle G. Gayliyev, Skylar Stockham, Eddie Franco - This work may not be copied for use in Academic Coursework.
+
+## Group Project : Sampling and Aliasing
+Date: 17- November - 2024
+Submission Date: By 6-December-2024, 11:59pm (The time of when the submission is due/will be ready to be evaluated)
+
+### Overview of the Project
+
+- The goal of this final project is to practice the concepts we learned in the class 
+in the context of solving a specific problem in digital signal processing,implementing 
+the solution and demonstrating that the solution on datasets.
+- In the class, we learned the conversion of signals between the analog and digital 
+domains and the basic ideas underlying sampling and signal reconstruction.
+- When sampling to convert a continuous-time (or analog) signal to a digital 
+form for computer processing and storage, the primary issue is aliasing and 
+the sampling strategy necessary to avoid aliasing of frequency components.
+- The main objective of this project is an understanding of the Sampling Theorem 
+which states that the sampling rate must be greater than twice the highest frequency 
+contained in the analog signal. 
+- Frequency content is taken to mean the spectral content of a signal when represented as a sum of sinusoids.
+- In this project, the signal reconstruction of a D-to-A converter is presentated from a practical point 
+of view as a generalization of interpolation.
+
+<pre><ins>Future extensions</ins> : This project is about a 3-week-long project. As a group members, 
+we'll be continuously working on this project posting updates. There will be no extentions of this project 
+after the listed due date wheather the assigned goals are accomplished or not. </pre>
+
+### Partnership
+
+This project is worked as the requirement of the "ECE 5530 / ECE 6530 - Digital Signal Processing" 
+class at the the University of Utah. The class requirements demand 
+this project to be done as a group of a minimum of three, and the maximum of four students. 
+The group members for this project are listed on top of this page in the header. 
+The project work is expected to be completed collectively with the group members.
+
+### Progress Notes
+
+<ins> On Nov 17th, 2024 : </ins> <br>
+ - Create the draft files and post them on the Github repo. <br>
+ 
+ <ins> On Nov 18th, 2024 : </ins> <br>
+ - Meet with the team members and the professor to discuss about the project and logistics.
+ 
+### Time Expenditures
+
+<pre>Predicted Hours: 20h		Actual Hours:	h		 </pre>
+
+The actual hours recorded on top will reflect the time spent 
+on the project. It will exclude the extra time spent reading, researching, 
+and understanding the contexts or materials that are required 
+to complete the tasks related to this project.
+
+### Comments to Evaluators:
+
+Thank you for evaluating this project and providing feedback. <br>
+
+Have a wonderful day!
+
+### Testing
+
+- 
+
+### References:
+
+1.
+ 
+ 
+![alt text](https://github.com/ggayliye/ECE6530_dsp)
+
 
 
 
