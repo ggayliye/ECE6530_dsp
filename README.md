@@ -73,7 +73,7 @@ Have a wonderful day!
 
 ### References:
 
-1. https://dspfirst.gatech.edu/chapters/04samplin/overview.html <br>
+1. <a href="https://dspfirst.gatech.edu/chapters/04samplin/overview.html" target="_blank">Sampling and Aliasing Task Webpage</a> <br>
 2. Proakis, John G., and Dimitris G. Manolakis. Digital Signal Processing. Prentice Hall, 2006. <br>
  
  
