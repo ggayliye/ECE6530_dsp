@@ -25,7 +25,12 @@ which states that the sampling rate must be greater than twice the highest frequ
 contained in the analog signal. 
 - Frequency content is taken to mean the spectral content of a signal when represented as a sum of sinusoids.
 - In this project, the signal reconstruction of a D-to-A converter is presentated from a practical point 
-of view as a generalization of interpolation.
+of view as a generalization of interpolation. <br>
+
+*This Project Will Include The Following Two Lab Excersizes:* <br>
+- ExP8: Digital Images: A/D and D/A : Sampling, Aliasing and Reconstruction
+- ExS8: Spectrograms: Harmonic Lines & Chirp Aliasing 
+
 
 <pre><ins>Future extensions</ins> : This project is about a 3-week-long project. As a group members, 
 we'll be continuously working on this project posting updates. There will be no extentions of this project 
@@ -68,7 +73,8 @@ Have a wonderful day!
 
 ### References:
 
-1.
+1. https://dspfirst.gatech.edu/chapters/04samplin/overview.html <br>
+2. Proakis, John G., and Dimitris G. Manolakis. Digital Signal Processing. Prentice Hall, 2006. <br>
  
  
 ![alt text](https://github.com/ggayliye/ECE6530_dsp)
