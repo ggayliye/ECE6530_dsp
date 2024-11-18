@@ -31,6 +31,35 @@ of view as a generalization of interpolation. <br>
 - ExP8: Digital Images: A/D and D/A : Sampling, Aliasing and Reconstruction
 - ExS8: Spectrograms: Harmonic Lines & Chirp Aliasing 
 
+### ExP8: Digital Images: A/D and D/A : Sampling, Aliasing and Reconstruction
+
+Introducing digital images as a second practical signal type is the aim of this lab. 
+We will demonstrate the implementation of the D-to-A reconstruction and A-to-D sampling 
+procedures for digital photos. Specifically, we will demonstrate a widely used technique 
+for image zooming (reconstruction) that produces subpar results; a subsequent lab will address 
+this problem and improve.<br>
+Please refer to the file "LabP8_DigitalImageLab.pdf" for details about this lab 
+and the related files are located at the directory: \.materials\DigitalImageLab and \.materials\lab06.
+
+### ExS8: Spectrograms: Harmonic Lines & Chirp Aliasing
+
+This lab's goal is to learn more about the spectral content of 
+signals that are evaluated using a spectrogram. In this lab, 
+a number of particular steps will be taken into consideration:<br>
+
+1. Synthesizing a linear-FM chirp with a Matlab M-file, and displaying its spectrogram. 
+Choosing the chirp parameters so that aliasing will happen.<br>
+2. Synthesizing a periodic triangle wave with a Matlab M-file, 
+and displaying its spectrogram. Relating the harmonic line spectrum to the 
+fundamental period of the triangle wave.<br>
+3. Comparing spectrograms using different scales for amplitude: decibels (dB) 
+for amplitude versus linear amplitude.<br>
+4. Examining details of the harmonic lines in the dB spectrogram of the triangle wave.<br>
+5. Spectrogram: making a spectrogram of your voice signal, and relating the harmonic line 
+spectrum to your previous measurement of pitch period.<br>
+
+Please refer to the file "LS8_ SpecgramHarmonicLinesChirpAliasing.pdf" for more details about this lab.
+
 
 <pre><ins>Future extensions</ins> : This project is about a 3-week-long project. As a group members, 
 we'll be continuously working on this project posting updates. There will be no extentions of this project 
