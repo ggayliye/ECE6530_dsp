@@ -84,6 +84,9 @@ The project work is expected to be completed collectively with the group members
   <ins> On Nov 19th, 2024 : </ins> <br>
  - The LabP8 Exercise 3.1 is complete.
  
+   <ins> On Nov 20th, 2024 : </ins> <br>
+ - Completed: LabP8 Exercise all parts.
+ 
 ### Time Expenditures
 
 <pre>Predicted Hours: 20h		Actual Hours:	h		 </pre>
