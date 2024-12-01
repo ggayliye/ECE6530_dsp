@@ -7,6 +7,14 @@ close all;
 clear;
 
 %% Sampling, Aliasing and Reconstruction : Lab P8 Exercise: 3 Lab Exercises 
+%% Overvew
+% The objective in this lab is to introduce digital images as a second 
+% useful signal type. We will show how the A-to-D sampling and the D-to-A 
+% reconstruction processes are carried out for digital images. 
+% In particular, we will show a commonly used method of image zooming is 
+% actually D/A reconstruction, but it gives “poor” results—a later lab will 
+% revisit this issue and do a better job.
+
  %% 3.1 Down-Sampling 
  %% Questions. 
  % Answer the following questions for the lighthouse picture,
@@ -155,7 +163,7 @@ title('Lighthouse Downlampled Image by Factor of 3.');
 
 %% 3.2a) 
 % The simplest interpolation would be reconstruction with a square pulse 
-% which produces a “zero-order % hold.” Here is a method that works for 
+% which produces a “zero-order hold.” Here is a method that works for 
 % a one-dimensional signal (i.e., one row or one column of the image),
 % assuming that we start with a row vector xr1, and the result is the
 % row vector xr1hold.
@@ -170,7 +178,10 @@ xr1hold = xr1(nn); % The result row vector
 
 figure('Name','Zero-order Hold Version.');
 clf;
-subplot(2, 1, 1); stem(xr1hold); hold on; plot(xr1hold); hold off;
+subplot(2, 1, 1); stem(xr1hold); hold on; plot(xr1hold);
+xlabel('Square Pulse Producing a “zero-order Hold.”')
+ylabel('The Result Row Vector');
+hold off;
 title('Plot of The Zero-order Hold Version.');
 subplot(2, 1, 2); imshow(xr1hold);
 title('Image of The Zero-order Hold Version.');
@@ -289,7 +300,10 @@ xr1linear = interp1(n1,xr1_1,tti); %-- function is INTERP-ONE
 
 figure('Name','Signal Example For Section 3.2d.');
 clf;
-stem(tti,xr1linear); title('a 1-D Signal Example For Section 3.2d.');
+stem(tti,xr1linear);hold on; plot(tti,xr1linear); hold off;
+title('a 1-D Signal Example For Section 3.2d.');
+xlabel('Locations between the n1 indices')
+ylabel('Linear Interpolation')
 
 % Interpolation Factor Calculation
 
