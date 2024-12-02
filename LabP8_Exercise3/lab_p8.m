@@ -55,13 +55,13 @@ clf;
 imshow(xx); title('Lighthouse Original Image.');
 
 % Plot the downsampled lighthouse image 
-figure('Name','Lighthouse Downlampled Image by Factor of 2.');
+figure('Name','Lighthouse Downsampled Image by Factor of 2.');
 clf;
 imshow(downsampled_lh_2);
-title('Lighthouse Downlampled Image by Factor of 2.');
+title('Lighthouse Downsampled Image by Factor of 2.');
 
 % Comparing both on the same figure
-figure('Name','Comparing Lighthouse Original VS Downlampled Image by Factor of 2.');
+figure('Name','Comparing Lighthouse Original VS Downsampled Image by Factor of 2.');
 clf;
 
 subplot(1, 2, 1); imshow(xx); 
@@ -154,10 +154,10 @@ downsampled_lh_3 = xx(1:3:end,1:3:end); % size : 109x142
 whos;
 
 % Plot the downsampled lighthouse image 
-figure('Name','Lighthouse Downlampled Image by Factor of 3.');
+figure('Name','Lighthouse Downsampled Image by Factor of 3.');
 clf;
 imshow(downsampled_lh_3);
-title('Lighthouse Downlampled Image by Factor of 3.');
+title('Lighthouse Downsampled Image by Factor of 3.');
 % The goal is to reconstruct an approximation to the original lighthouse 
 % image, which is the size of 256x256, from the smaller down-sampled image.
 
