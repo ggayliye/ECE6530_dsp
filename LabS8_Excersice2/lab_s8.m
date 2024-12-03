@@ -475,7 +475,7 @@ L_SECT_2 = T_SECT_2 * f_s1;  % Section length in terms of samples
 figure('Name','20 msec period Triangle Wave in Time Domain.');
 clf;
 plot(tt_2, xx2, 'b', 'LineWidth', 1.5);
-title('Triangle Wave in Time Domain');
+title('20 msec period Triangle Wave in Time Domain');
 xlabel('Time (s)');
 ylabel('Amplitude');
 grid on;
@@ -483,7 +483,7 @@ grid on;
 
 DBrange = 80; % given value
 
-figure("Name","Triangle Wave Spectrogram 2.2.3.b");
+figure("Name","20-msec periodic Triangle Wave Spectrogram");
 title("20-msec periodic Triangle Wave Spectrogram")
 
 %plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %-- with negative frequencies
@@ -536,8 +536,8 @@ xx4 = Amp * (abs(qq4 - (0.5 * T)) - 0.25 * T);  % Create the triangle wave
 
 DBrange = 80; % given value
 
-figure("Name","Triangle Wave Spectrogram 2.2.3.b");
-title("20-msec periodic Triangle Wave Spectrogram")
+figure("Name","4-msec periodic Triangle Wave Spectrogram");
+title("4-msec periodic Triangle Wave Spectrogram")
 
 %plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %-- with negative frequencies
 
