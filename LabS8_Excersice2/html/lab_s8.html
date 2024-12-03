@@ -1,0 +1,1279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>lab_s8</title>
+<meta name="generator" content="MATLAB 24.2">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2024-12-02">
+<meta name="DC.source" content="lab_s8.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#2">Spectrograms: Harmonic Lines &amp; Chirp Aliasing : Lab S8 Exercise.</a>
+</li>
+<li>
+<a href="#3">There are 2 Lab Exercises : 2.1 Spectrogram for a Chirp that Aliases</a>
+</li>
+<li>
+<a href="#4">and 2.2 Spectrogram of Periodic Signal</a>
+</li>
+<li>
+<a href="#5">Overvew</a>
+</li>
+<li>
+<a href="#6">2.1 Spectrogram for a Chirp that Aliases</a>
+</li>
+<li>
+<a href="#7">2.2 Spectrogram of Periodic Signal</a>
+</li>
+<li>
+<a href="#8">2.2.1 Spectrogram of Periodic Triangle Wave</a>
+</li>
+<li>
+<a href="#9">2.2.2 Decibels (dB): Seeing Small Values in the Spectrogram</a>
+</li>
+<li>
+<a href="#11">2.2.3 Spectrogram in dB</a>
+</li>
+</ul>
+</div>
+<pre class="codeinput">
+<span class="comment">% ==========================================================================</span>
+<span class="comment">% ECE 5530/ ECE 6530 Digital Signal Processing, ECE Dep., The University of Utah</span>
+<span class="comment">% Group Project</span>
+<span class="comment">% Team: Kyle G. Gayliyev, Skylar Stockham, Eddie Franco</span>
+<span class="comment">% ==========================================================================</span>
+close <span class="string">all</span>;
+clear;
+</pre>
+<h2 id="2">Spectrograms: Harmonic Lines &amp; Chirp Aliasing : Lab S8 Exercise.</h2>
+<h2 id="3">There are 2 Lab Exercises : 2.1 Spectrogram for a Chirp that Aliases</h2>
+<h2 id="4">and 2.2 Spectrogram of Periodic Signal</h2>
+<h2 id="5">Overvew</h2>
+<p>The objective of this lab is to study further the spectral content of signals analyzed via the spectrogram. There are several specific steps that will be considered in this lab:</p>
+<p>1. Synthesize a linear-FM chirp with a MATLAB M-file, and display its spectrogram. Choose the chrip parameters so that aliasing will happen.</p>
+<p>2. Synthesize a periodic triangle wave with a MATLAB M-file, and display its spectrogram. Relate the harmonic line spectrum to the fundamental period of the triangle wave. 3. Compare spectrograms using different scales for amplitude: decibels (dB) for amplitude versus linear amplitude.</p>
+<p>4. Examine details of the harmonic lines in the dB spectrogram of the triangle wave.</p>
+<p>5. Spectrogram: make a spectrogram of your voice signal, and relate the harmonic line spectrum to your previous measurement of pitch period.</p>
+<pre class="codeinput">
+<span class="comment">% We'll learn more about the connection between the time-domain definition</span>
+<span class="comment">% of the signal and its frequency-domain content.</span>
+</pre>
+<h2 id="6">2.1 Spectrogram for a Chirp that Aliases</h2>
+<p>TASK: Use the code provided in the pre-Lab section as a starting point in order to write a MATLAB script or function that will synthesize a &ldquo;chirp&rdquo; signal. Then use that M-file in this section.</p>
+<pre class="codeinput">
+<span class="comment">% a) What happens when we make a signal that &ldquo;chirps&rdquo; up to a very high</span>
+<span class="comment">% frequency, and the instantaneous frequency goes past half the sampling</span>
+<span class="comment">% rate?</span>
+<span class="comment">% Generate a chirp signal that starts at 1000 Hz when t=0 s, and</span>
+<span class="comment">% chirps up to 11,000 Hz, at t= 4 s. Use fs= 4000 Hz.</span>
+<span class="comment">% Determine the parameters needed in (1).</span>
+
+fs = 4000; <span class="comment">% -Number of time samples per second</span>
+dt = 1/fs; <span class="comment">%time domain conversion</span>
+tStart = 0;  <span class="comment">% in sec</span>
+tStop = 4; <span class="comment">% in sec</span>
+tt = tStart:dt:tStop; <span class="comment">% total duration with sampling intervals</span>
+
+f1 = 1000; <span class="comment">% [Hz], also fzero =f1 since t=0sec.</span>
+f2= 11000; <span class="comment">% [Hz]</span>
+
+fzero=f1;
+
+<span class="comment">% Calculate slope parameter (mu)</span>
+mu = (f2-f1)/(2*(tStop-tStart));
+
+phi = 2*pi*rand; <span class="comment">%-- random phase</span>
+
+psi=2*pi*mu.*(tt.^2)+2*pi*fzero.*tt+phi; <span class="comment">% chirp signal equation</span>
+chirp_signal = real( 7.7*exp(1i*psi) );
+<span class="comment">% soundsc( chirp_signal, fs ); %-- uncomment to hear the sound</span>
+
+figure(<span class="string">'Name'</span>,<span class="string">'Chirp Signal in Time Domain.'</span>);
+clf;
+plot(tt,chirp_signal); title(<span class="string">'Chirp Signal in Time Domain.'</span>);
+xlabel(<span class="string">'t, [s]'</span>);
+ylabel(<span class="string">'Amplitude'</span>);
+
+<span class="comment">% Plot the spectrogram of the chirp signal</span>
+figure(<span class="string">'Name'</span>,<span class="string">'Spectrogram Of The Chirp Signal.'</span>);
+clf;
+spectrogram(chirp_signal, 256, 250, 256, fs, <span class="string">'yaxis'</span>);
+title(<span class="string">'Spectrogram of the Chirp Signal'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Frequency (kHz)'</span>);
+colorbar;
+
+<span class="comment">% When a signal "chirps" up to a very high frequency, and the instantaneous</span>
+<span class="comment">% frequency goes past half the sampling rate it means the signal's</span>
+<span class="comment">% frequency gradually increases over time, reaching a significantly higher</span>
+<span class="comment">% frequency at the end of the chirp; if the final frequency exceeds half</span>
+<span class="comment">% the sampling rate of the system recording it, the signal will experience</span>
+<span class="comment">% aliasing, meaning the high frequencies will be misinterpreted as lower</span>
+<span class="comment">% frequencies due to the limitations of digital sampling, distorting the</span>
+<span class="comment">% signal's representation in the recorded data.</span>
+
+<span class="comment">% Aliasing is a phenomenon where high-frequency components appear as lower</span>
+<span class="comment">% frequencies. In the spectrogram,  you will notice that once the chirp</span>
+<span class="comment">% frequency exceeds 2000Hz, it folds back into the frequency range below</span>
+<span class="comment">% 2000Hz, creating mirrored frequency components.This results in distortion</span>
+<span class="comment">% because the true frequency of the signal is not correctly represented in</span>
+<span class="comment">% the sampled signal.</span>
+
+
+<span class="comment">% (b) Generate the chirp signal in MATLAB and make a spectrogram with a</span>
+<span class="comment">% short section length, LSECT, to verify that you have the correct starting</span>
+<span class="comment">% and ending frequencies.2 For your chosen LSECT, determine the section</span>
+<span class="comment">% duration TSECT in secs</span>
+
+<span class="comment">% Spectrogram parameters</span>
+LSECT = 128;  <span class="comment">% Section length (number of samples per segment)</span>
+overlap = LSECT - 10;  <span class="comment">% Overlap of sections, chosen to provide smoother transitions</span>
+nfft = 256;  <span class="comment">% Number of FFT points</span>
+
+<span class="comment">% Plot the spectrogram of the chirp signal</span>
+figure(<span class="string">'Name'</span>,<span class="string">'Spectrogram of the Chirp Signal with Short Section Length.'</span>);
+clf;
+spectrogram(chirp_signal, LSECT, overlap, nfft, fs, <span class="string">'yaxis'</span>);
+title(<span class="string">'Spectrogram of the Chirp Signal with Short Section Length'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Frequency (kHz)'</span>);
+colorbar;
+
+<span class="comment">% Calculate section duration (TSECT) in seconds</span>
+TSECT = LSECT / fs;
+disp([<span class="string">'Section duration TSECT: '</span>, num2str(TSECT), <span class="string">' seconds'</span>]);
+
+<span class="comment">% (c) Explain why the instantaneous frequency seen in the spectrogram is</span>
+<span class="comment">% goes up and down between zero and fs=2, i.e., it does not chirp up to</span>
+<span class="comment">% 11,000Hz.</span>
+<span class="comment">% There are two effects that should be accounted for in your explanation.</span>
+<span class="comment">% Note: If possible listen to the signal to verify that the spectrogram is</span>
+<span class="comment">% faithfully representing the audio signal that you hear.</span>
+
+<span class="comment">% Effect #1: Aliasing Effect</span>
+<span class="comment">% The sampling frequency is 4000 Hz, which means the Nyquist frequency</span>
+<span class="comment">% is: 2000 Hz.</span>
+<span class="comment">% When the instantaneous frequency of the chirp exceeds the Nyquist</span>
+<span class="comment">% frequency, aliasing occurs.</span>
+<span class="comment">% Aliasing is the phenomenon where high frequencies are misrepresented as</span>
+<span class="comment">% lower frequencies</span>
+<span class="comment">% when sampled at a rate that is insufficient to capture them accurately.</span>
+<span class="comment">% In the case of this chirp signal: As the frequency of the chirp exceeds</span>
+<span class="comment">% 2000Hz,</span>
+<span class="comment">% it is folded back into the lower frequency range (below the Nyquist</span>
+<span class="comment">% frequency).</span>
+<span class="comment">% This folding effect causes the frequency to appear to go down once it</span>
+<span class="comment">% exceeds 2000Hz,</span>
+<span class="comment">% resulting in the up and down pattern seen in the spectrogram.</span>
+<span class="comment">% This behavior is consistent with the aliasing theorem, which states</span>
+<span class="comment">% that frequencies above</span>
+<span class="comment">% the Nyquist limit appear at incorrect, lower frequencies in the sampled</span>
+<span class="comment">% signal.</span>
+
+<span class="comment">% Effect #2:. Periodic Nature of Frequency Representation in the Spectrogram</span>
+<span class="comment">% The Discrete Fourier Transform (DFT), which is used in calculating the</span>
+<span class="comment">% spectrogram, treats frequency content as periodic.</span>
+<span class="comment">% The frequency axis is considered to be periodic, with the range extending</span>
+<span class="comment">% from 0 to f_s</span>
+<span class="comment">% but practically folding at f_s/2.</span>
+<span class="comment">% Frequencies between 0 and f s/2 are represented correctly.</span>
+<span class="comment">% Frequencies beyond f_s/2 (up to f_s) are aliased and appear as if they</span>
+<span class="comment">% are in the range 0 to f s/2.</span>
+<span class="comment">% This periodic folding creates a mirror effect in the spectrogram.</span>
+<span class="comment">% Therefore, the instantaneous frequency appears to go back down after</span>
+<span class="comment">% reaching f s/2.</span>
+<span class="comment">% This is a direct result of how the DFT operates and how the spectrogram</span>
+<span class="comment">% interprets frequencies beyond the Nyquist frequenc</span>
+</pre>
+<pre class="codeoutput">Section duration TSECT: 0.032 seconds
+</pre>
+<img vspace="5" hspace="5" src="lab_s8_01.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_02.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_03.png" alt=""> <h2 id="7">2.2 Spectrogram of Periodic Signal</h2>
+<p>A periodic signal is known to have a Fourier Series, which is usually described as a harmonic line spectrum because the only frequencies present in the spectrum are integer multiples of the fundamental frequency. With the spectrogram, it is easy to exhibit this harmonic line characteristic.</p>
+<h2 id="8">2.2.1 Spectrogram of Periodic Triangle Wave</h2>
+<p>(a) Write a simple MATLAB script that will generate a periodic triangle wave once the period is given. The DClevel of the triangle wave should be zero, and the peak amplitude should be equal to 0.5. Here is a MATLAB one-liner that can form the basis of this script: tt_=0:(1/f_s):t_Stop; qq=rem(tt_,T);xx=Amp*(abs(qq-(0.5*T))-0.25*T); The values of f_s, t_Stop, T, Amp will have to be determined.</p>
+<pre class="codeinput">
+<span class="comment">% Parameters for the triangle wave</span>
+f_s = 1000;        <span class="comment">% Sampling frequency in Hz</span>
+t_Stop = 1;        <span class="comment">% Duration of the signal in seconds</span>
+T = 0.2;          <span class="comment">% Period of the triangle wave in seconds</span>
+Amp = 2;          <span class="comment">% Amplitude scaling factor to achieve peak amplitude of 0.5</span>
+
+<span class="comment">% Generate the time vector</span>
+tt_ = 0:(1/f_s):t_Stop;  <span class="comment">% Time vector from 0 to t_Stop with step size 1/f_s</span>
+
+<span class="comment">% Generate the triangle wave using the provided one-liner</span>
+qq = rem(tt_, T);  <span class="comment">% Folding time into the period T (creates sawtooth shape)</span>
+xx = Amp * (abs(qq - (0.5 * T)) - 0.25 * T);  <span class="comment">% Create the triangle wave</span>
+
+<span class="comment">% Plot the triangle wave in the time domain</span>
+figure(<span class="string">'Name'</span>,<span class="string">'Triangle Wave in Time Domain.'</span>);
+clf;
+plot(tt_, xx, <span class="string">'b'</span>, <span class="string">'LineWidth'</span>, 1.5);
+title(<span class="string">'Triangle Wave in Time Domain'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Amplitude'</span>);
+grid <span class="string">on</span>;
+
+<span class="comment">% (b) Generate a triangle wave with a period of 10msec, using a sampling</span>
+<span class="comment">% rate of f_s D 10000Hz. The duration should be 3secs. Then make a plot</span>
+<span class="comment">% of a short section of the signal consisting of 3&ndash;5 periods to verify that</span>
+<span class="comment">% you have the correct time waveform.</span>
+
+<span class="comment">% Parameters for the triangle wave</span>
+f_s1 = 10000;       <span class="comment">% Sampling frequency in Hz</span>
+t_Stop1 = 3;        <span class="comment">% Duration of the signal in seconds</span>
+T_1 = 0.01;         <span class="comment">% Period of the triangle wave in seconds (10 ms)</span>
+Amp_1 = 1;          <span class="comment">% Amplitude scaling factor for peak amplitude of 1</span>
+
+<span class="comment">% Generate the time vector</span>
+tt_1 = 0:(1/f_s1):t_Stop1;
+<span class="comment">% Time vector from 0 to t_Stop1 with step size 1/f_s1</span>
+
+<span class="comment">% Generate the triangle wave using the given one-liner</span>
+qq_ = rem(tt_1, T_1);  <span class="comment">% Folding time into the period T_1 (creates sawtooth shape)</span>
+xx_ = Amp_1 * (abs(qq_ - (0.5 * T_1)) - 0.25 * T_1);  <span class="comment">% Create the triangle wave</span>
+
+<span class="comment">% Plot the entire triangle wave in the time domain</span>
+figure(<span class="string">'Name'</span>,<span class="string">'Triangle Wave in Time Domain.'</span>);
+clf;
+plot(tt_1, xx_, <span class="string">'b'</span>, <span class="string">'LineWidth'</span>, 1);
+title(<span class="string">'Triangle Wave in Time Domain'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Amplitude'</span>);
+grid <span class="string">on</span>;
+xlim([0 t_Stop1]);
+ylim([-0.003 0.003]);
+
+<span class="comment">% Plot a short section of the triangle wave consisting of 3-5 periods</span>
+period_count = 5;  <span class="comment">% Number of periods to plot (3-5 periods)</span>
+time_window = period_count * T_1;  <span class="comment">% Time window to cover 5 periods</span>
+
+<span class="comment">% Find the indices to plot</span>
+indices_to_plot = find(tt_1 &lt;= time_window);
+
+<span class="comment">% Plot the short section</span>
+figure(<span class="string">'Name'</span>,<span class="string">'Short Section of the Triangle Wave (3-5 Periods).'</span>);
+clf;
+plot(tt_1(indices_to_plot), xx_(indices_to_plot), <span class="string">'r'</span>, <span class="string">'LineWidth'</span>, 1.5);
+title(<span class="string">'Short Section of the Triangle Wave (3-5 Periods)'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Amplitude'</span>);
+grid <span class="string">on</span>;
+xlim([0 time_window]);
+ylim([-0.003 0.003]);
+
+
+<span class="comment">% (c) Make a spectrogram with a long section duration.</span>
+<span class="comment">% It is important to pick a section duration that is equal to an integer</span>
+<span class="comment">% number of periods of the periodic triangular waveform created in the</span>
+<span class="comment">% previous part. Define T_SECT to get exactly 5 periods, and then determine</span>
+<span class="comment">% the section length LSECT (an integer) to be used in plotspec.</span>
+
+<span class="comment">% Define section duration for spectrogram</span>
+T_SECT = 5 * T_1;  <span class="comment">% Section duration for exactly 5 periods</span>
+L_SECT = T_SECT * f_s1;  <span class="comment">% Section length in terms of samples</span>
+
+<span class="comment">% Plot the spectrogram of the triangle wave with long section duration</span>
+figure(<span class="string">'Name'</span>,<span class="string">'Spectrogram of the Periodic Triangle Wave (Long Section Duration).'</span>);
+clf;
+spectrogram(xx_, L_SECT, L_SECT/2, L_SECT, f_s1, <span class="string">'yaxis'</span>);
+title(<span class="string">'Spectrogram of the Periodic Triangle Wave (Long Section Duration)'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Frequency (kHz)'</span>);
+colorbar;
+
+<span class="comment">% (d) You should expect to see a &ldquo;harmonic line spectrum&rdquo; in the</span>
+<span class="comment">% spectrogram. Since frequency is along the vertical axis,the harmonic</span>
+<span class="comment">% lines will appear as horizontal lines in the spectrogram. Make a list of</span>
+<span class="comment">% all the harmonic frequencies that you can see in the spectrogram.</span>
+
+harmonic_frequencies = [100, 300, 500, 700, 900, 1100, 1300, 1500, 1700, <span class="keyword">...</span>
+    1900, 2100, 2300, 2500, 2700, 2900, 3100, 3300, 3500, 3700, 3900, <span class="keyword">...</span>
+                        4100, 4300, 4500, 4700, 4900];
+
+
+<span class="comment">% (e) Determine the fundamental frequency for the harmonic lines.</span>
+
+<span class="comment">% Given period of the triangle wave (in seconds)</span>
+T_2 = 0.01;  <span class="comment">% Period in seconds (10 ms)</span>
+
+<span class="comment">% Calculate the fundamental frequency</span>
+f0 = 1 / T_2;
+
+<span class="comment">% Display the fundamental frequency</span>
+disp([<span class="string">'The fundamental frequency is: '</span>, num2str(f0), <span class="string">' Hz'</span>]);
+
+<span class="comment">% (f) Measure the amplitudes of the first and third harmonic lines by using</span>
+<span class="comment">% MATLAB&rsquo;s Data Cursor after zooming in on those parts of the spectrogram image.</span>
+<span class="comment">% Record the values for the amplitudes and compute the ratio.</span>
+<span class="comment">% Example power values from Data Cursor (in dB)</span>
+P1_dB = -71.23;  <span class="comment">% Power of the first harmonic in dB</span>
+P3_dB = -90.29;  <span class="comment">% Power of the third harmonic in dB</span>
+
+<span class="comment">% Convert power values to linear amplitudes</span>
+A1_linear = 10^(P1_dB / 20);
+A3_linear = 10^(P3_dB / 20);
+
+<span class="comment">% Calculate the ratio of the third harmonic amplitude to the first harmonic amplitude</span>
+ratio = A3_linear / A1_linear;
+
+<span class="comment">% Display the ratio</span>
+disp([<span class="string">'The ratio of the amplitude of the third harmonic to the first harmonic is: '</span>, num2str(ratio)]);
+</pre>
+<pre class="codeoutput">The fundamental frequency is: 100 Hz
+The ratio of the amplitude of the third harmonic to the first harmonic is: 0.11143
+</pre>
+<img vspace="5" hspace="5" src="lab_s8_04.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_05.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_06.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_07.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_08.png" alt=""> <h2 id="9">2.2.2 Decibels (dB): Seeing Small Values in the Spectrogram</h2>
+<p>Where did all the harmonics go? The answer is that the higher harmonics have amplitudes that are too small to be seen in a spectrogram that displays values with a linear amplitude. Instead, a logarithmic amplitude scale is needed.</p>
+<pre class="codeinput">
+<span class="comment">% TASK : Answer the following questions about decibels:</span>
+
+<span class="comment">% a) In the language of dB, a factor of two is &ldquo;6 dB.&rdquo; In other words,</span>
+<span class="comment">% if B2 is 6 dB bigger than B1, then it is twice as big (approximately).</span>
+<span class="comment">% Explain why this statement is true.</span>
+
+<span class="comment">% Answer: In the language of dB, a factor of two corresponds to an</span>
+<span class="comment">% increase of 6 dB. In other words, if B2 is 6 dB larger than B1, then  B2</span>
+<span class="comment">% is approximately twice as large as B1.</span>
+<span class="comment">% The relationship between a value in linear scale and decibels is</span>
+<span class="comment">% given by:</span>
+<span class="comment">% Power in dB = 20log10(B2/B1).</span>
+<span class="comment">% To understand why 6 dB corresponds to a factor of two, let&rsquo;s substitute</span>
+<span class="comment">% and evaluate this expression.</span>
+<span class="comment">% Linear to dB Conversion: Given that the relationship between two values</span>
+<span class="comment">% B1 and B2 in terms of dB is:</span>
+<span class="comment">% 20log10(B2/B1) =6dB. Solving for the Ratio, we get:</span>
+<span class="comment">% B2/B1=~2.</span>
+<span class="comment">% This means that an increase of 6 dB corresponds to a value that is twice</span>
+<span class="comment">% as large in linear terms.</span>
+
+<span class="comment">% (b) Determine the dB difference between a1 and a3. In other words, a3 is</span>
+<span class="comment">% how many dB below a1. Furthermore, explain why the dB difference depends</span>
+<span class="comment">% only on the k indices.</span>
+
+<span class="comment">% Given Fourier coefficients formula for a triangle wave</span>
+k1 = 1;  <span class="comment">% First harmonic index</span>
+k3 = 3;  <span class="comment">% Third harmonic index</span>
+
+<span class="comment">% Calculate a1 and a3 using the given formula</span>
+a1 = -2 / (pi^2 * k1^2);
+a3 = -2 / (pi^2 * k3^2);
+
+<span class="comment">% Calculate the ratio in linear terms</span>
+ratio_linear = abs(a1) / abs(a3);
+
+<span class="comment">% Calculate the dB difference</span>
+dB_difference = 20 * log10(ratio_linear);
+
+<span class="comment">% Display the result</span>
+disp([<span class="string">'The dB difference between a1 and a3 is: '</span>, num2str(dB_difference), <span class="string">' dB'</span>]);
+
+<span class="comment">% The dB difference depends only on the k indices because the amplitude of</span>
+<span class="comment">% each harmonic a_k is inversely proportional to the square of k</span>
+<span class="comment">% This means that the amplitude decreases as  k increases, and this</span>
+<span class="comment">% relationship is governed by k2. Therefore, when taking the ratio of</span>
+<span class="comment">% two coefficients a_1 and a_3</span>
+<span class="comment">% Since this ratio depends purely on the squares of the indices,</span>
+<span class="comment">% the resulting dB difference also depends only on these indices.</span>
+<span class="comment">% This is why the dB difference between a_1 and a_3 depends only on the</span>
+<span class="comment">% values of k and not on the specific waveform amplitude values.</span>
+
+<span class="comment">% (c) Determine (in dB) how far a15 is below a1 for the periodic triangular</span>
+<span class="comment">% wave.</span>
+
+<span class="comment">% Given Fourier coefficients formula for a triangle wave</span>
+k1 = 1;  <span class="comment">% First harmonic index</span>
+k15 = 15;  <span class="comment">% Fifteenth harmonic index</span>
+
+<span class="comment">% Calculate a1 and a15 using the given formula</span>
+a1 = -2 / (pi^2 * k1^2);
+a15 = -2 / (pi^2 * k15^2);
+
+<span class="comment">% Calculate the ratio in linear terms</span>
+ratio_linear = abs(a1) / abs(a15);
+
+<span class="comment">% Calculate the dB difference</span>
+dB_difference = 20 * log10(ratio_linear);
+<span class="comment">% This confirms that a_15 is approximately 43.52 dB below a_1 for the</span>
+<span class="comment">% periodic triangular wave.</span>
+
+<span class="comment">% Display the result</span>
+disp([<span class="string">'The dB difference between a1 and a15 is: '</span>, num2str(dB_difference), <span class="string">' dB'</span>]);
+</pre>
+<pre class="codeoutput">The dB difference between a1 and a3 is: 19.0849 dB
+The dB difference between a1 and a15 is: 47.0437 dB
+</pre>
+<h2 id="11">2.2.3 Spectrogram in dB</h2>
+<pre class="codeinput">
+<span class="comment">% A variation of the SP-First function plotspec has been written to</span>
+<span class="comment">% incorporate the dB amplitude scale. This new function is called</span>
+<span class="comment">% plotspecDB, and its calling template is shown below.</span>
+
+
+<span class="comment">% a) Create a &ldquo;dB-Spectrogram&rdquo; for the 10-msec periodic triangular wave</span>
+<span class="comment">% generated in Sect. 2.2.1. Use a dBrange equal to 80 dB. Notice that</span>
+<span class="comment">% many more spectrum lines are now visible. List the frequencies of all</span>
+<span class="comment">% the harmonic spectrum lines, or give a general formula.</span>
+
+<span class="comment">% Solution:</span>
+<span class="comment">% From section 2.2.1.b and c, we get the following data:</span>
+
+<span class="comment">% % Parameters for the triangle wave</span>
+<span class="comment">% f_s1 = 10000;       % Sampling frequency in Hz</span>
+<span class="comment">% t_Stop1 = 3;        % Duration of the signal in seconds</span>
+<span class="comment">% T_1 = 0.01;         % Period of the triangle wave in seconds (10 ms)</span>
+<span class="comment">% Amp_1 = 1;          % Amplitude scaling factor for peak amplitude of 1</span>
+<span class="comment">%</span>
+<span class="comment">% % Generate the time vector</span>
+<span class="comment">% tt_1 = 0:(1/f_s1):t_Stop1;</span>
+<span class="comment">% % Time vector from 0 to t_Stop1 with step size 1/f_s1</span>
+<span class="comment">%</span>
+<span class="comment">% % Generate the triangle wave using the given one-liner</span>
+<span class="comment">% qq_ = rem(tt_1, T_1);  % Folding time into the period T_1 (creates sawtooth shape)</span>
+<span class="comment">% xx_ = Amp_1 * (abs(qq_ - (0.5 * T_1)) - 0.25 * T_1);  % Create the triangle wave</span>
+<span class="comment">%</span>
+<span class="comment">%</span>
+<span class="comment">% % Define section duration for spectrogram</span>
+<span class="comment">% T_SECT_ = 5 * T_1;  % Section duration for exactly 5 periods</span>
+<span class="comment">% L_SECT_ = T_SECT_ * f_s1;  % Section length in terms of samples</span>
+f_s = 1000;        <span class="comment">% Sampling frequency in Hz</span>
+t_Stop = 1;        <span class="comment">% Duration of the signal in seconds</span>
+T3 = 0.01;          <span class="comment">% Period of the triangle wave in seconds</span>
+Amp = 2;          <span class="comment">% Amplitude scaling factor to achieve peak amplitude of 0.5</span>
+
+<span class="comment">% Generate the time vector</span>
+tt_2 = 0:(1/f_s):t_Stop;  <span class="comment">% Time vector from 0 to t_Stop with step size 1/f_s</span>
+
+<span class="comment">% Generate the triangle wave using the provided one-liner</span>
+qq2 = rem(tt_2, T3);  <span class="comment">% Folding time into the period T (creates sawtooth shape)</span>
+xx3 = Amp * (abs(qq2 - (0.5 * T)) - 0.25 * T);  <span class="comment">% Create the triangle wave</span>
+
+DBrange = 80; <span class="comment">% given value</span>
+
+figure(<span class="string">"Name"</span>,<span class="string">"Triangle Wave Spectrogram 2.2.3.a"</span>);
+title(<span class="string">"10-msec periodic Triangle Wave Spectrogram"</span>)
+
+<span class="comment">% plotspecDB(xx_1, f_s2, L_SECT1, DBrange), colorbar, grid on %-- with negative frequencies</span>
+
+spectrogram(xx3,<span class="string">'power'</span>,<span class="string">'yaxis'</span>);
+
+<span class="comment">% From the plot, we determined the frequencies of all the harmonic spectrum</span>
+<span class="comment">% lines readings as :</span>
+<span class="comment">% .02 = 100 Hz ; .06 = 300 Hz ; .1 = 500 Hz ; .14 = 700 Hz ; .18 = 900 Hz</span>
+<span class="comment">% .22 = 1100 Hz ; .26 = 1300 Hz ; .30 = 1500 Hz ; .34 = 1700 Hz</span>
+<span class="comment">% .38 = 1900 Hz ; .42 = 2100 Hz ; .46 = 2300 Hz ; .50 = 2500 Hz</span>
+<span class="comment">% .54 = 2700 Hz ; .58 = 2900 Hz ; .62 = 3100 Hz ; .66 = 3300 Hz</span>
+<span class="comment">% .70 = 3500 Hz ; .74 = 3700 Hz ; .78 = 3900 Hz ; .82 = 4100 Hz</span>
+<span class="comment">% .86 = 4300 Hz ; .90 = 4500 Hz ; .94 = 4700 Hz ; .98 = 4900 Hz</span>
+
+
+<span class="comment">% b) Generate a second triangle wave by changing the period to 20 msec.</span>
+<span class="comment">% Then make the dB-Spectrogram of this 20-msec triangle wave, being careful</span>
+<span class="comment">% to select the section duration as an integer number of periods.</span>
+<span class="comment">% From the spectrogram, determine the fundamental frequency and also the</span>
+<span class="comment">% frequency of the highest harmonic line. Also, determine the harmonic</span>
+<span class="comment">% number for the highest frequency, e.g., the 17th or 31st, etc.</span>
+
+<span class="comment">%Solution:</span>
+<span class="comment">% Parameters for the triangle wave</span>
+f_s = 1000;        <span class="comment">% Sampling frequency in Hz</span>
+t_Stop = 1;        <span class="comment">% Duration of the signal in seconds</span>
+T2 = 0.02;          <span class="comment">% Period of the triangle wave in seconds</span>
+Amp = 2;          <span class="comment">% Amplitude scaling factor to achieve peak amplitude of 0.5</span>
+
+<span class="comment">% Generate the time vector</span>
+tt_2 = 0:(1/f_s):t_Stop;  <span class="comment">% Time vector from 0 to t_Stop with step size 1/f_s</span>
+
+<span class="comment">% Generate the triangle wave using the provided one-liner</span>
+qq2 = rem(tt_2, T2);  <span class="comment">% Folding time into the period T (creates sawtooth shape)</span>
+xx2 = Amp * (abs(qq2 - (0.5 * T)) - 0.25 * T);  <span class="comment">% Create the triangle wave</span>
+
+T_SECT_2 = 5 * T_1;  <span class="comment">% Section duration for exactly 5 periods</span>
+L_SECT_2 = T_SECT_2 * f_s1;  <span class="comment">% Section length in terms of samples</span>
+<span class="comment">% Plot the triangle wave in the time domain</span>
+figure(<span class="string">'Name'</span>,<span class="string">'20 msec period Triangle Wave in Time Domain.'</span>);
+clf;
+plot(tt_2, xx2, <span class="string">'b'</span>, <span class="string">'LineWidth'</span>, 1.5);
+title(<span class="string">'Triangle Wave in Time Domain'</span>);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Amplitude'</span>);
+grid <span class="string">on</span>;
+
+
+DBrange = 80; <span class="comment">% given value</span>
+
+figure(<span class="string">"Name"</span>,<span class="string">"Triangle Wave Spectrogram 2.2.3.b"</span>);
+title(<span class="string">"20-msec periodic Triangle Wave Spectrogram"</span>)
+
+<span class="comment">%plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %-- with negative frequencies</span>
+
+spectrogram(xx2,<span class="string">'power'</span>,<span class="string">'yaxis'</span>);
+
+
+<span class="comment">% c) For the 20-msec triangle wave, measure the amplitudes (in dB) of the</span>
+<span class="comment">% first and third harmonic lines by using MATLAB&rsquo;s Data Cursor after</span>
+<span class="comment">% zooming in on those parts of the spectrogram image. Compare the dB</span>
+<span class="comment">% difference to the ratio obtained in Section 2.2.1, part (f).</span>
+
+<span class="comment">%Solution:</span>
+
+P1_dB2 = -24.25;  <span class="comment">% Power of the first harmonic in dB</span>
+P3_dB2 = -47.6;  <span class="comment">% Power of the third harmonic in dB</span>
+
+<span class="comment">% Convert power values to linear amplitudes</span>
+A1_linear2 = 10^(P1_dB2 / 20);
+A3_linear2 = 10^(P3_dB2 / 20);
+
+<span class="comment">% Calculate the ratio of the third harmonic amplitude to the first harmonic amplitude</span>
+ratio2 = A3_linear2 / A1_linear2;
+
+<span class="comment">% Display the ratio</span>
+disp([<span class="string">'for the second ratio, the ratio of the amplitude of the third harmonic to the first harmonic is: '</span>, num2str(ratio2)]);
+
+<span class="comment">% d) Change the period to 4 msec and make another dB-Spectrogram.</span>
+<span class="comment">% Be careful to select the section duration as an integer number of periods.</span>
+<span class="comment">% This period is shorter but the frequency separation of the harmonic lines</span>
+<span class="comment">% is greater. Notice that this inverse relationship was also true when</span>
+<span class="comment">% comparing the 20 msec case to the 10 msec case.</span>
+
+<span class="comment">%Solution:</span>
+
+
+f_s = 1000;        <span class="comment">% Sampling frequency in Hz</span>
+t_Stop = 1;        <span class="comment">% Duration of the signal in seconds</span>
+T4 = 0.004;          <span class="comment">% Period of the triangle wave in seconds</span>
+Amp = 2;          <span class="comment">% Amplitude scaling factor to achieve peak amplitude of 0.5</span>
+
+<span class="comment">% Generate the time vector</span>
+tt_4 = 0:(1/f_s):t_Stop;  <span class="comment">% Time vector from 0 to t_Stop with step size 1/f_s</span>
+
+<span class="comment">% Generate the triangle wave using the provided one-liner</span>
+qq4 = rem(tt_4, T4);  <span class="comment">% Folding time into the period T (creates sawtooth shape)</span>
+xx4 = Amp * (abs(qq4 - (0.5 * T)) - 0.25 * T);  <span class="comment">% Create the triangle wave</span>
+
+
+
+DBrange = 80; <span class="comment">% given value</span>
+
+figure(<span class="string">"Name"</span>,<span class="string">"Triangle Wave Spectrogram 2.2.3.b"</span>);
+title(<span class="string">"20-msec periodic Triangle Wave Spectrogram"</span>)
+
+<span class="comment">%plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %-- with negative frequencies</span>
+
+spectrogram(xx4,<span class="string">'power'</span>,<span class="string">'yaxis'</span>);
+
+
+
+
+
+
+
+
+
+<span class="keyword">function</span> him = plotspecDB(xx,fsamp,Lsect,DBrange)
+<span class="comment">%PLOTSPECDB plot a Spectrogram as an image</span>
+<span class="comment">% (display magnitude in decibels)</span>
+<span class="comment">% usage: him = plotspec(xx,fsamp,Lsect,DBrange)</span>
+<span class="comment">% him = handle to the image object</span>
+<span class="comment">% xx = input signal</span>
+<span class="comment">% fsamp = sampling rate</span>
+<span class="comment">% Lsect = section length (integer, power of 2 is a good choice)</span>
+<span class="comment">% amount of data to Fourier analyze at one time</span>
+<span class="comment">% DBrange = defines the minimum dB value; max is always 0 dB</span>
+
+<span class="comment">% Spectrogram Calculation</span>
+window = hamming(Lsect); <span class="comment">% Window function</span>
+overlap = Lsect/2; <span class="comment">% Overlap factor</span>
+[S, F, T] = spectrogram(xx, window, overlap, Lsect, fsamp);
+
+<span class="comment">% Magnitude Spectrogram to dB Conversion</span>
+ SdB = 10 * log10(abs(S));
+
+<span class="comment">% dB Range Adjustment</span>
+SdB = max(SdB, DBrange);
+
+<span class="comment">% Plot the spectrogram</span>
+ him = imagesc(T, F, SdB);
+ set(gca, <span class="string">'YDir'</span>, <span class="string">'normal'</span>);
+ colormap(jet);
+ colorbar;
+
+ <span class="comment">% Axis Label Setting</span>
+xlabel(<span class="string">'time, [s]'</span>);
+ylabel(<span class="string">'Frequency, [Hz]'</span>);
+title(<span class="string">'dB-Spectrogram'</span>);
+<span class="keyword">end</span>
+</pre>
+<pre class="codeoutput">for the second ratio, the ratio of the amplitude of the third harmonic to the first harmonic is: 0.067999
+</pre>
+<img vspace="5" hspace="5" src="lab_s8_09.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_10.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_11.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_12.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_13.png" alt=""> <p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024b</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+% ========================================================================== 
+% ECE 5530/ ECE 6530 Digital Signal Processing, ECE Dep., The University of Utah 
+% Group Project
+% Team: Kyle G. Gayliyev, Skylar Stockham, Eddie Franco
+% ========================================================================== 
+close all;
+clear;
+
+%% Spectrograms: Harmonic Lines & Chirp Aliasing : Lab S8 Exercise.
+%%  There are 2 Lab Exercises : 2.1 Spectrogram for a Chirp that Aliases 
+%%  and 2.2 Spectrogram of Periodic Signal
+%% Overvew
+% The objective of this lab is to study further the spectral content of 
+% signals analyzed via the spectrogram. There are several specific steps 
+% that will be considered in this lab: 
+%
+% 1. Synthesize a linear-FM chirp with a MATLAB M-file, and display its 
+% spectrogram. Choose the chrip parameters so that aliasing will happen. 
+% 
+% 2. Synthesize a periodic triangle wave with a MATLAB M-file, and display 
+% its spectrogram. Relate the harmonic line spectrum to the fundamental 
+% period of the triangle wave. 3. Compare spectrograms using different 
+% scales for amplitude: decibels (dB) for amplitude versus linear amplitude. 
+% 
+% 4. Examine details of the harmonic lines in the dB spectrogram of the 
+% triangle wave. 
+% 
+% 5. Spectrogram: make a spectrogram of your voice signal, and relate the 
+% harmonic line spectrum to your previous measurement of pitch period.
+
+% We'll learn more about the connection between the time-domain definition 
+% of the signal and its frequency-domain content.
+
+ %% 2.1 Spectrogram for a Chirp that Aliases
+% TASK: Use the code provided in the pre-Lab section as a starting point 
+% in order to write a MATLAB script or function that will synthesize 
+% a “chirp” signal. Then use that M-file in this section.
+
+% a) What happens when we make a signal that “chirps” up to a very high 
+% frequency, and the instantaneous frequency goes past half the sampling 
+% rate? 
+% Generate a chirp signal that starts at 1000 Hz when t=0 s, and 
+% chirps up to 11,000 Hz, at t= 4 s. Use fs= 4000 Hz. 
+% Determine the parameters needed in (1).
+
+fs = 4000; % -Number of time samples per second
+dt = 1/fs; %time domain conversion
+tStart = 0;  % in sec
+tStop = 4; % in sec
+tt = tStart:dt:tStop; % total duration with sampling intervals
+
+f1 = 1000; % [Hz], also fzero =f1 since t=0sec.
+f2= 11000; % [Hz]
+
+fzero=f1;
+
+% Calculate slope parameter (mu)
+mu = (f2-f1)/(2*(tStop-tStart));
+
+phi = 2*pi*rand; %REPLACE_WITH_DASH_DASH random phase
+
+psi=2*pi*mu.*(tt.^2)+2*pi*fzero.*tt+phi; % chirp signal equation
+chirp_signal = real( 7.7*exp(1i*psi) );
+% soundsc( chirp_signal, fs ); %REPLACE_WITH_DASH_DASH uncomment to hear the sound
+
+figure('Name','Chirp Signal in Time Domain.');
+clf;
+plot(tt,chirp_signal); title('Chirp Signal in Time Domain.');
+xlabel('t, [s]');
+ylabel('Amplitude');
+
+% Plot the spectrogram of the chirp signal
+figure('Name','Spectrogram Of The Chirp Signal.');
+clf;
+spectrogram(chirp_signal, 256, 250, 256, fs, 'yaxis');
+title('Spectrogram of the Chirp Signal');
+xlabel('Time (s)');
+ylabel('Frequency (kHz)');
+colorbar;
+
+% When a signal "chirps" up to a very high frequency, and the instantaneous 
+% frequency goes past half the sampling rate it means the signal's 
+% frequency gradually increases over time, reaching a significantly higher 
+% frequency at the end of the chirp; if the final frequency exceeds half 
+% the sampling rate of the system recording it, the signal will experience 
+% aliasing, meaning the high frequencies will be misinterpreted as lower 
+% frequencies due to the limitations of digital sampling, distorting the 
+% signal's representation in the recorded data.
+
+% Aliasing is a phenomenon where high-frequency components appear as lower 
+% frequencies. In the spectrogram,  you will notice that once the chirp 
+% frequency exceeds 2000Hz, it folds back into the frequency range below  
+% 2000Hz, creating mirrored frequency components.This results in distortion 
+% because the true frequency of the signal is not correctly represented in 
+% the sampled signal.
+
+
+% (b) Generate the chirp signal in MATLAB and make a spectrogram with a 
+% short section length, LSECT, to verify that you have the correct starting 
+% and ending frequencies.2 For your chosen LSECT, determine the section 
+% duration TSECT in secs
+
+% Spectrogram parameters
+LSECT = 128;  % Section length (number of samples per segment)
+overlap = LSECT - 10;  % Overlap of sections, chosen to provide smoother transitions
+nfft = 256;  % Number of FFT points
+
+% Plot the spectrogram of the chirp signal
+figure('Name','Spectrogram of the Chirp Signal with Short Section Length.');
+clf;
+spectrogram(chirp_signal, LSECT, overlap, nfft, fs, 'yaxis');
+title('Spectrogram of the Chirp Signal with Short Section Length');
+xlabel('Time (s)');
+ylabel('Frequency (kHz)');
+colorbar;
+
+% Calculate section duration (TSECT) in seconds
+TSECT = LSECT / fs;
+disp(['Section duration TSECT: ', num2str(TSECT), ' seconds']);
+
+% (c) Explain why the instantaneous frequency seen in the spectrogram is 
+% goes up and down between zero and fs=2, i.e., it does not chirp up to 
+% 11,000Hz. 
+% There are two effects that should be accounted for in your explanation. 
+% Note: If possible listen to the signal to verify that the spectrogram is 
+% faithfully representing the audio signal that you hear.
+
+% Effect #1: Aliasing Effect
+% The sampling frequency is 4000 Hz, which means the Nyquist frequency 
+% is: 2000 Hz.
+% When the instantaneous frequency of the chirp exceeds the Nyquist 
+% frequency, aliasing occurs.
+% Aliasing is the phenomenon where high frequencies are misrepresented as 
+% lower frequencies 
+% when sampled at a rate that is insufficient to capture them accurately.
+% In the case of this chirp signal: As the frequency of the chirp exceeds 
+% 2000Hz, 
+% it is folded back into the lower frequency range (below the Nyquist 
+% frequency).
+% This folding effect causes the frequency to appear to go down once it 
+% exceeds 2000Hz, 
+% resulting in the up and down pattern seen in the spectrogram.
+% This behavior is consistent with the aliasing theorem, which states 
+% that frequencies above 
+% the Nyquist limit appear at incorrect, lower frequencies in the sampled 
+% signal.
+
+% Effect #2:. Periodic Nature of Frequency Representation in the Spectrogram
+% The Discrete Fourier Transform (DFT), which is used in calculating the 
+% spectrogram, treats frequency content as periodic.
+% The frequency axis is considered to be periodic, with the range extending 
+% from 0 to f_s
+% but practically folding at f_s/2.
+% Frequencies between 0 and f s/2 are represented correctly.
+% Frequencies beyond f_s/2 (up to f_s) are aliased and appear as if they 
+% are in the range 0 to f s/2.
+% This periodic folding creates a mirror effect in the spectrogram.
+% Therefore, the instantaneous frequency appears to go back down after 
+% reaching f s/2. 
+% This is a direct result of how the DFT operates and how the spectrogram 
+% interprets frequencies beyond the Nyquist frequenc
+
+%% 2.2 Spectrogram of Periodic Signal
+% A periodic signal is known to have a Fourier Series, which is usually 
+% described as a harmonic line spectrum because the only frequencies 
+% present in the spectrum are integer multiples of the fundamental 
+% frequency. With the spectrogram, it is easy to exhibit this harmonic 
+% line characteristic.
+    %% 2.2.1 Spectrogram of Periodic Triangle Wave
+% (a) Write a simple MATLAB script that will generate a periodic triangle 
+% wave once the period is given. The DClevel of the triangle wave should 
+% be zero, and the peak amplitude should be equal to 0.5. Here is a MATLAB
+% one-liner that can form the basis of this script: tt_=0:(1/f_s):t_Stop;
+% qq=rem(tt_,T);xx=Amp*(abs(qq-(0.5*T))-0.25*T); The values of f_s, t_Stop, 
+% T, Amp will have to be determined.
+
+% Parameters for the triangle wave
+f_s = 1000;        % Sampling frequency in Hz
+t_Stop = 1;        % Duration of the signal in seconds
+T = 0.2;          % Period of the triangle wave in seconds
+Amp = 2;          % Amplitude scaling factor to achieve peak amplitude of 0.5
+
+% Generate the time vector
+tt_ = 0:(1/f_s):t_Stop;  % Time vector from 0 to t_Stop with step size 1/f_s
+
+% Generate the triangle wave using the provided one-liner
+qq = rem(tt_, T);  % Folding time into the period T (creates sawtooth shape)
+xx = Amp * (abs(qq - (0.5 * T)) - 0.25 * T);  % Create the triangle wave
+
+% Plot the triangle wave in the time domain
+figure('Name','Triangle Wave in Time Domain.');
+clf;
+plot(tt_, xx, 'b', 'LineWidth', 1.5);
+title('Triangle Wave in Time Domain');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+
+% (b) Generate a triangle wave with a period of 10msec, using a sampling 
+% rate of f_s D 10000Hz. The duration should be 3secs. Then make a plot 
+% of a short section of the signal consisting of 3–5 periods to verify that 
+% you have the correct time waveform.
+
+% Parameters for the triangle wave
+f_s1 = 10000;       % Sampling frequency in Hz
+t_Stop1 = 3;        % Duration of the signal in seconds
+T_1 = 0.01;         % Period of the triangle wave in seconds (10 ms)
+Amp_1 = 1;          % Amplitude scaling factor for peak amplitude of 1
+
+% Generate the time vector
+tt_1 = 0:(1/f_s1):t_Stop1;  
+% Time vector from 0 to t_Stop1 with step size 1/f_s1
+
+% Generate the triangle wave using the given one-liner
+qq_ = rem(tt_1, T_1);  % Folding time into the period T_1 (creates sawtooth shape)
+xx_ = Amp_1 * (abs(qq_ - (0.5 * T_1)) - 0.25 * T_1);  % Create the triangle wave
+
+% Plot the entire triangle wave in the time domain
+figure('Name','Triangle Wave in Time Domain.');
+clf;
+plot(tt_1, xx_, 'b', 'LineWidth', 1);
+title('Triangle Wave in Time Domain');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+xlim([0 t_Stop1]);
+ylim([-0.003 0.003]);
+
+% Plot a short section of the triangle wave consisting of 3-5 periods
+period_count = 5;  % Number of periods to plot (3-5 periods)
+time_window = period_count * T_1;  % Time window to cover 5 periods
+
+% Find the indices to plot
+indices_to_plot = find(tt_1 <= time_window);
+
+% Plot the short section
+figure('Name','Short Section of the Triangle Wave (3-5 Periods).');
+clf;
+plot(tt_1(indices_to_plot), xx_(indices_to_plot), 'r', 'LineWidth', 1.5);
+title('Short Section of the Triangle Wave (3-5 Periods)');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+xlim([0 time_window]);
+ylim([-0.003 0.003]);
+
+
+% (c) Make a spectrogram with a long section duration.
+% It is important to pick a section duration that is equal to an integer 
+% number of periods of the periodic triangular waveform created in the 
+% previous part. Define T_SECT to get exactly 5 periods, and then determine 
+% the section length LSECT (an integer) to be used in plotspec.
+
+% Define section duration for spectrogram
+T_SECT = 5 * T_1;  % Section duration for exactly 5 periods
+L_SECT = T_SECT * f_s1;  % Section length in terms of samples
+
+% Plot the spectrogram of the triangle wave with long section duration
+figure('Name','Spectrogram of the Periodic Triangle Wave (Long Section Duration).');
+clf;
+spectrogram(xx_, L_SECT, L_SECT/2, L_SECT, f_s1, 'yaxis');
+title('Spectrogram of the Periodic Triangle Wave (Long Section Duration)');
+xlabel('Time (s)');
+ylabel('Frequency (kHz)');
+colorbar;
+
+% (d) You should expect to see a “harmonic line spectrum” in the 
+% spectrogram. Since frequency is along the vertical axis,the harmonic 
+% lines will appear as horizontal lines in the spectrogram. Make a list of 
+% all the harmonic frequencies that you can see in the spectrogram.
+
+harmonic_frequencies = [100, 300, 500, 700, 900, 1100, 1300, 1500, 1700, ... 
+    1900, 2100, 2300, 2500, 2700, 2900, 3100, 3300, 3500, 3700, 3900, ...
+                        4100, 4300, 4500, 4700, 4900];
+
+
+% (e) Determine the fundamental frequency for the harmonic lines.
+
+% Given period of the triangle wave (in seconds)
+T_2 = 0.01;  % Period in seconds (10 ms)
+
+% Calculate the fundamental frequency
+f0 = 1 / T_2;
+
+% Display the fundamental frequency
+disp(['The fundamental frequency is: ', num2str(f0), ' Hz']);
+
+% (f) Measure the amplitudes of the first and third harmonic lines by using
+% MATLAB’s Data Cursor after zooming in on those parts of the spectrogram image. 
+% Record the values for the amplitudes and compute the ratio.
+% Example power values from Data Cursor (in dB)
+P1_dB = -71.23;  % Power of the first harmonic in dB
+P3_dB = -90.29;  % Power of the third harmonic in dB
+
+% Convert power values to linear amplitudes
+A1_linear = 10^(P1_dB / 20);
+A3_linear = 10^(P3_dB / 20);
+
+% Calculate the ratio of the third harmonic amplitude to the first harmonic amplitude
+ratio = A3_linear / A1_linear;
+
+% Display the ratio
+disp(['The ratio of the amplitude of the third harmonic to the first harmonic is: ', num2str(ratio)]);
+    
+    %% 2.2.2 Decibels (dB): Seeing Small Values in the Spectrogram
+% Where did all the harmonics go?
+% The answer is that the higher harmonics have amplitudes that are too 
+% small to be seen in a spectrogram that displays values with a linear 
+% amplitude. Instead, a logarithmic amplitude scale is needed.
+
+% TASK : Answer the following questions about decibels:
+
+% a) In the language of dB, a factor of two is “6 dB.” In other words, 
+% if B2 is 6 dB bigger than B1, then it is twice as big (approximately). 
+% Explain why this statement is true.
+
+% Answer: In the language of dB, a factor of two corresponds to an 
+% increase of 6 dB. In other words, if B2 is 6 dB larger than B1, then  B2
+% is approximately twice as large as B1.
+% The relationship between a value in linear scale and decibels is 
+% given by: 
+% Power in dB = 20log10(B2/B1).
+% To understand why 6 dB corresponds to a factor of two, let’s substitute 
+% and evaluate this expression.
+% Linear to dB Conversion: Given that the relationship between two values 
+% B1 and B2 in terms of dB is:
+% 20log10(B2/B1) =6dB. Solving for the Ratio, we get:
+% B2/B1=~2.
+% This means that an increase of 6 dB corresponds to a value that is twice 
+% as large in linear terms.
+
+% (b) Determine the dB difference between a1 and a3. In other words, a3 is 
+% how many dB below a1. Furthermore, explain why the dB difference depends 
+% only on the k indices.
+
+% Given Fourier coefficients formula for a triangle wave
+k1 = 1;  % First harmonic index
+k3 = 3;  % Third harmonic index
+
+% Calculate a1 and a3 using the given formula
+a1 = -2 / (pi^2 * k1^2);
+a3 = -2 / (pi^2 * k3^2);
+
+% Calculate the ratio in linear terms
+ratio_linear = abs(a1) / abs(a3);
+
+% Calculate the dB difference
+dB_difference = 20 * log10(ratio_linear);
+
+% Display the result
+disp(['The dB difference between a1 and a3 is: ', num2str(dB_difference), ' dB']);
+
+% The dB difference depends only on the k indices because the amplitude of 
+% each harmonic a_k is inversely proportional to the square of k
+% This means that the amplitude decreases as  k increases, and this 
+% relationship is governed by k2. Therefore, when taking the ratio of 
+% two coefficients a_1 and a_3
+% Since this ratio depends purely on the squares of the indices, 
+% the resulting dB difference also depends only on these indices. 
+% This is why the dB difference between a_1 and a_3 depends only on the 
+% values of k and not on the specific waveform amplitude values.
+
+% (c) Determine (in dB) how far a15 is below a1 for the periodic triangular 
+% wave.
+
+% Given Fourier coefficients formula for a triangle wave
+k1 = 1;  % First harmonic index
+k15 = 15;  % Fifteenth harmonic index
+
+% Calculate a1 and a15 using the given formula
+a1 = -2 / (pi^2 * k1^2);
+a15 = -2 / (pi^2 * k15^2);
+
+% Calculate the ratio in linear terms
+ratio_linear = abs(a1) / abs(a15);
+
+% Calculate the dB difference
+dB_difference = 20 * log10(ratio_linear);
+% This confirms that a_15 is approximately 43.52 dB below a_1 for the 
+% periodic triangular wave.
+
+% Display the result
+disp(['The dB difference between a1 and a15 is: ', num2str(dB_difference), ' dB']);
+
+%% 
+
+%% 2.2.3 Spectrogram in dB
+
+% A variation of the SP-First function plotspec has been written to 
+% incorporate the dB amplitude scale. This new function is called 
+% plotspecDB, and its calling template is shown below.
+
+
+% a) Create a “dB-Spectrogram” for the 10-msec periodic triangular wave 
+% generated in Sect. 2.2.1. Use a dBrange equal to 80 dB. Notice that 
+% many more spectrum lines are now visible. List the frequencies of all 
+% the harmonic spectrum lines, or give a general formula.
+
+% Solution:
+% From section 2.2.1.b and c, we get the following data:
+
+% % Parameters for the triangle wave
+% f_s1 = 10000;       % Sampling frequency in Hz
+% t_Stop1 = 3;        % Duration of the signal in seconds
+% T_1 = 0.01;         % Period of the triangle wave in seconds (10 ms)
+% Amp_1 = 1;          % Amplitude scaling factor for peak amplitude of 1
+% 
+% % Generate the time vector
+% tt_1 = 0:(1/f_s1):t_Stop1;  
+% % Time vector from 0 to t_Stop1 with step size 1/f_s1
+% 
+% % Generate the triangle wave using the given one-liner
+% qq_ = rem(tt_1, T_1);  % Folding time into the period T_1 (creates sawtooth shape)
+% xx_ = Amp_1 * (abs(qq_ - (0.5 * T_1)) - 0.25 * T_1);  % Create the triangle wave
+% 
+% 
+% % Define section duration for spectrogram
+% T_SECT_ = 5 * T_1;  % Section duration for exactly 5 periods
+% L_SECT_ = T_SECT_ * f_s1;  % Section length in terms of samples
+f_s = 1000;        % Sampling frequency in Hz
+t_Stop = 1;        % Duration of the signal in seconds
+T3 = 0.01;          % Period of the triangle wave in seconds
+Amp = 2;          % Amplitude scaling factor to achieve peak amplitude of 0.5
+
+% Generate the time vector
+tt_2 = 0:(1/f_s):t_Stop;  % Time vector from 0 to t_Stop with step size 1/f_s
+
+% Generate the triangle wave using the provided one-liner
+qq2 = rem(tt_2, T3);  % Folding time into the period T (creates sawtooth shape)
+xx3 = Amp * (abs(qq2 - (0.5 * T)) - 0.25 * T);  % Create the triangle wave
+
+DBrange = 80; % given value
+
+figure("Name","Triangle Wave Spectrogram 2.2.3.a");
+title("10-msec periodic Triangle Wave Spectrogram")
+
+% plotspecDB(xx_1, f_s2, L_SECT1, DBrange), colorbar, grid on %REPLACE_WITH_DASH_DASH with negative frequencies
+
+spectrogram(xx3,'power','yaxis');
+
+% From the plot, we determined the frequencies of all the harmonic spectrum 
+% lines readings as :
+% .02 = 100 Hz ; .06 = 300 Hz ; .1 = 500 Hz ; .14 = 700 Hz ; .18 = 900 Hz 
+% .22 = 1100 Hz ; .26 = 1300 Hz ; .30 = 1500 Hz ; .34 = 1700 Hz 
+% .38 = 1900 Hz ; .42 = 2100 Hz ; .46 = 2300 Hz ; .50 = 2500 Hz 
+% .54 = 2700 Hz ; .58 = 2900 Hz ; .62 = 3100 Hz ; .66 = 3300 Hz 
+% .70 = 3500 Hz ; .74 = 3700 Hz ; .78 = 3900 Hz ; .82 = 4100 Hz 
+% .86 = 4300 Hz ; .90 = 4500 Hz ; .94 = 4700 Hz ; .98 = 4900 Hz
+
+
+% b) Generate a second triangle wave by changing the period to 20 msec. 
+% Then make the dB-Spectrogram of this 20-msec triangle wave, being careful 
+% to select the section duration as an integer number of periods. 
+% From the spectrogram, determine the fundamental frequency and also the 
+% frequency of the highest harmonic line. Also, determine the harmonic 
+% number for the highest frequency, e.g., the 17th or 31st, etc.
+
+%Solution:
+% Parameters for the triangle wave
+f_s = 1000;        % Sampling frequency in Hz
+t_Stop = 1;        % Duration of the signal in seconds
+T2 = 0.02;          % Period of the triangle wave in seconds
+Amp = 2;          % Amplitude scaling factor to achieve peak amplitude of 0.5
+
+% Generate the time vector
+tt_2 = 0:(1/f_s):t_Stop;  % Time vector from 0 to t_Stop with step size 1/f_s
+
+% Generate the triangle wave using the provided one-liner
+qq2 = rem(tt_2, T2);  % Folding time into the period T (creates sawtooth shape)
+xx2 = Amp * (abs(qq2 - (0.5 * T)) - 0.25 * T);  % Create the triangle wave
+
+T_SECT_2 = 5 * T_1;  % Section duration for exactly 5 periods
+L_SECT_2 = T_SECT_2 * f_s1;  % Section length in terms of samples
+% Plot the triangle wave in the time domain
+figure('Name','20 msec period Triangle Wave in Time Domain.');
+clf;
+plot(tt_2, xx2, 'b', 'LineWidth', 1.5);
+title('Triangle Wave in Time Domain');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+
+
+DBrange = 80; % given value
+
+figure("Name","Triangle Wave Spectrogram 2.2.3.b");
+title("20-msec periodic Triangle Wave Spectrogram")
+
+%plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %REPLACE_WITH_DASH_DASH with negative frequencies
+
+spectrogram(xx2,'power','yaxis');
+
+
+% c) For the 20-msec triangle wave, measure the amplitudes (in dB) of the 
+% first and third harmonic lines by using MATLAB’s Data Cursor after 
+% zooming in on those parts of the spectrogram image. Compare the dB 
+% difference to the ratio obtained in Section 2.2.1, part (f).
+
+%Solution:
+
+P1_dB2 = -24.25;  % Power of the first harmonic in dB
+P3_dB2 = -47.6;  % Power of the third harmonic in dB
+
+% Convert power values to linear amplitudes
+A1_linear2 = 10^(P1_dB2 / 20);
+A3_linear2 = 10^(P3_dB2 / 20);
+
+% Calculate the ratio of the third harmonic amplitude to the first harmonic amplitude
+ratio2 = A3_linear2 / A1_linear2;
+
+% Display the ratio
+disp(['for the second ratio, the ratio of the amplitude of the third harmonic to the first harmonic is: ', num2str(ratio2)]);
+
+% d) Change the period to 4 msec and make another dB-Spectrogram. 
+% Be careful to select the section duration as an integer number of periods. 
+% This period is shorter but the frequency separation of the harmonic lines 
+% is greater. Notice that this inverse relationship was also true when 
+% comparing the 20 msec case to the 10 msec case.
+
+%Solution: 
+
+
+f_s = 1000;        % Sampling frequency in Hz
+t_Stop = 1;        % Duration of the signal in seconds
+T4 = 0.004;          % Period of the triangle wave in seconds
+Amp = 2;          % Amplitude scaling factor to achieve peak amplitude of 0.5
+
+% Generate the time vector
+tt_4 = 0:(1/f_s):t_Stop;  % Time vector from 0 to t_Stop with step size 1/f_s
+
+% Generate the triangle wave using the provided one-liner
+qq4 = rem(tt_4, T4);  % Folding time into the period T (creates sawtooth shape)
+xx4 = Amp * (abs(qq4 - (0.5 * T)) - 0.25 * T);  % Create the triangle wave
+
+
+
+DBrange = 80; % given value
+
+figure("Name","Triangle Wave Spectrogram 2.2.3.b");
+title("20-msec periodic Triangle Wave Spectrogram")
+
+%plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %REPLACE_WITH_DASH_DASH with negative frequencies
+
+spectrogram(xx4,'power','yaxis');
+
+
+
+
+
+
+
+
+
+function him = plotspecDB(xx,fsamp,Lsect,DBrange)
+%PLOTSPECDB plot a Spectrogram as an image
+% (display magnitude in decibels)
+% usage: him = plotspec(xx,fsamp,Lsect,DBrange)
+% him = handle to the image object
+% xx = input signal
+% fsamp = sampling rate
+% Lsect = section length (integer, power of 2 is a good choice)
+% amount of data to Fourier analyze at one time
+% DBrange = defines the minimum dB value; max is always 0 dB
+ 
+% Spectrogram Calculation
+window = hamming(Lsect); % Window function
+overlap = Lsect/2; % Overlap factor
+[S, F, T] = spectrogram(xx, window, overlap, Lsect, fsamp);
+
+% Magnitude Spectrogram to dB Conversion
+ SdB = 10 * log10(abs(S));
+
+% dB Range Adjustment
+SdB = max(SdB, DBrange);
+
+% Plot the spectrogram
+ him = imagesc(T, F, SdB);
+ set(gca, 'YDir', 'normal');
+ colormap(jet);
+ colorbar;
+
+ % Axis Label Setting
+xlabel('time, [s]');
+ylabel('Frequency, [Hz]');
+title('dB-Spectrogram');
+end
+
+##### SOURCE END #####
+-->
+</body>
+</html>
