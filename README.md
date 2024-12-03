@@ -7,7 +7,7 @@ Repo: https://github.com/ggayliye/ECE6530_dsp <br>
 Copyright: ECE 6530, Kyle G. Gayliyev, Skylar Stockham, Eddie Franco - This work may not be copied for use in Academic Coursework.
 
 ## Group Project : Sampling and Aliasing
-Date: 17- November - 2024
+Date: 17- November - 2024 <br>
 Submission Date: By 6-December-2024, 11:59pm (The time of when the submission is due/will be ready to be evaluated)
 
 ### Overview of the Project
