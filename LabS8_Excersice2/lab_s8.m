@@ -382,6 +382,8 @@ dB_difference = 20 * log10(ratio_linear);
 % Display the result
 disp(['The dB difference between a1 and a15 is: ', num2str(dB_difference), ' dB']);
 
+%% 
+
 %% 2.2.3 Spectrogram in dB
 
 % A variation of the SP-First function plotspec has been written to 
@@ -415,6 +417,17 @@ disp(['The dB difference between a1 and a15 is: ', num2str(dB_difference), ' dB'
 % % Define section duration for spectrogram
 % T_SECT_ = 5 * T_1;  % Section duration for exactly 5 periods
 % L_SECT_ = T_SECT_ * f_s1;  % Section length in terms of samples
+f_s = 1000;        % Sampling frequency in Hz
+t_Stop = 1;        % Duration of the signal in seconds
+T3 = 0.01;          % Period of the triangle wave in seconds
+Amp = 2;          % Amplitude scaling factor to achieve peak amplitude of 0.5
+
+% Generate the time vector
+tt_2 = 0:(1/f_s):t_Stop;  % Time vector from 0 to t_Stop with step size 1/f_s
+
+% Generate the triangle wave using the provided one-liner
+qq2 = rem(tt_2, T3);  % Folding time into the period T (creates sawtooth shape)
+xx3 = Amp * (abs(qq2 - (0.5 * T)) - 0.25 * T);  % Create the triangle wave
 
 DBrange = 80; % given value
 
@@ -423,7 +436,7 @@ title("10-msec periodic Triangle Wave Spectrogram")
 
 % plotspecDB(xx_1, f_s2, L_SECT1, DBrange), colorbar, grid on %-- with negative frequencies
 
-spectrogram(xx_,'power','yaxis');
+spectrogram(xx3,'power','yaxis');
 
 % From the plot, we determined the frequencies of all the harmonic spectrum 
 % lines readings as :
@@ -443,6 +456,39 @@ spectrogram(xx_,'power','yaxis');
 % number for the highest frequency, e.g., the 17th or 31st, etc.
 
 %Solution:
+% Parameters for the triangle wave
+f_s = 1000;        % Sampling frequency in Hz
+t_Stop = 1;        % Duration of the signal in seconds
+T2 = 0.02;          % Period of the triangle wave in seconds
+Amp = 2;          % Amplitude scaling factor to achieve peak amplitude of 0.5
+
+% Generate the time vector
+tt_2 = 0:(1/f_s):t_Stop;  % Time vector from 0 to t_Stop with step size 1/f_s
+
+% Generate the triangle wave using the provided one-liner
+qq2 = rem(tt_2, T2);  % Folding time into the period T (creates sawtooth shape)
+xx2 = Amp * (abs(qq2 - (0.5 * T)) - 0.25 * T);  % Create the triangle wave
+
+T_SECT_2 = 5 * T_1;  % Section duration for exactly 5 periods
+L_SECT_2 = T_SECT_2 * f_s1;  % Section length in terms of samples
+% Plot the triangle wave in the time domain
+figure('Name','20 msec period Triangle Wave in Time Domain.');
+clf;
+plot(tt_2, xx2, 'b', 'LineWidth', 1.5);
+title('Triangle Wave in Time Domain');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+
+
+DBrange = 80; % given value
+
+figure("Name","Triangle Wave Spectrogram 2.2.3.b");
+title("20-msec periodic Triangle Wave Spectrogram")
+
+%plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %-- with negative frequencies
+
+spectrogram(xx2,'power','yaxis');
 
 
 % c) For the 20-msec triangle wave, measure the amplitudes (in dB) of the 
@@ -452,6 +498,18 @@ spectrogram(xx_,'power','yaxis');
 
 %Solution:
 
+P1_dB2 = -24.25;  % Power of the first harmonic in dB
+P3_dB2 = -47.6;  % Power of the third harmonic in dB
+
+% Convert power values to linear amplitudes
+A1_linear2 = 10^(P1_dB2 / 20);
+A3_linear2 = 10^(P3_dB2 / 20);
+
+% Calculate the ratio of the third harmonic amplitude to the first harmonic amplitude
+ratio2 = A3_linear2 / A1_linear2;
+
+% Display the ratio
+disp(['for the second ratio, the ratio of the amplitude of the third harmonic to the first harmonic is: ', num2str(ratio2)]);
 
 % d) Change the period to 4 msec and make another dB-Spectrogram. 
 % Be careful to select the section duration as an integer number of periods. 
@@ -459,8 +517,31 @@ spectrogram(xx_,'power','yaxis');
 % is greater. Notice that this inverse relationship was also true when 
 % comparing the 20 msec case to the 10 msec case.
 
-%Solution:
+%Solution: 
 
+
+f_s = 1000;        % Sampling frequency in Hz
+t_Stop = 1;        % Duration of the signal in seconds
+T4 = 0.004;          % Period of the triangle wave in seconds
+Amp = 2;          % Amplitude scaling factor to achieve peak amplitude of 0.5
+
+% Generate the time vector
+tt_4 = 0:(1/f_s):t_Stop;  % Time vector from 0 to t_Stop with step size 1/f_s
+
+% Generate the triangle wave using the provided one-liner
+qq4 = rem(tt_4, T4);  % Folding time into the period T (creates sawtooth shape)
+xx4 = Amp * (abs(qq4 - (0.5 * T)) - 0.25 * T);  % Create the triangle wave
+
+
+
+DBrange = 80; % given value
+
+figure("Name","Triangle Wave Spectrogram 2.2.3.b");
+title("20-msec periodic Triangle Wave Spectrogram")
+
+%plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %-- with negative frequencies
+
+spectrogram(xx4,'power','yaxis');
 
 
 
