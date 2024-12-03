@@ -9,7 +9,7 @@ To make changes, update the MATLAB code and republish this document.
 <title>lab_s8</title>
 <meta name="generator" content="MATLAB 24.2">
 <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
-<meta name="DC.date" content="2024-12-02">
+<meta name="DC.date" content="2024-12-03">
 <meta name="DC.source" content="lab_s8.m">
 <style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
@@ -395,7 +395,7 @@ disp([<span class="string">'The ratio of the amplitude of the third harmonic to 
 <pre class="codeoutput">The fundamental frequency is: 100 Hz
 The ratio of the amplitude of the third harmonic to the first harmonic is: 0.11143
 </pre>
-<img vspace="5" hspace="5" src="lab_s8_04.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_05.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_06.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_07.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_08.png" alt=""> <h2 id="9">2.2.2 Decibels (dB): Seeing Small Values in the Spectrogram</h2>
+<img vspace="5" hspace="5" src="lab_s8_04.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_05.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_06.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_07.png" alt=""> <h2 id="9">2.2.2 Decibels (dB): Seeing Small Values in the Spectrogram</h2>
 <p>Where did all the harmonics go? The answer is that the higher harmonics have amplitudes that are too small to be seen in a spectrogram that displays values with a linear amplitude. Instead, a logarithmic amplitude scale is needed.</p>
 <pre class="codeinput">
 <span class="comment">% TASK : Answer the following questions about decibels:</span>
@@ -566,7 +566,7 @@ L_SECT_2 = T_SECT_2 * f_s1;  <span class="comment">% Section length in terms of 
 figure(<span class="string">'Name'</span>,<span class="string">'20 msec period Triangle Wave in Time Domain.'</span>);
 clf;
 plot(tt_2, xx2, <span class="string">'b'</span>, <span class="string">'LineWidth'</span>, 1.5);
-title(<span class="string">'Triangle Wave in Time Domain'</span>);
+title(<span class="string">'20 msec period Triangle Wave in Time Domain'</span>);
 xlabel(<span class="string">'Time (s)'</span>);
 ylabel(<span class="string">'Amplitude'</span>);
 grid <span class="string">on</span>;
@@ -574,7 +574,7 @@ grid <span class="string">on</span>;
 
 DBrange = 80; <span class="comment">% given value</span>
 
-figure(<span class="string">"Name"</span>,<span class="string">"Triangle Wave Spectrogram 2.2.3.b"</span>);
+figure(<span class="string">"Name"</span>,<span class="string">"20-msec periodic Triangle Wave Spectrogram"</span>);
 title(<span class="string">"20-msec periodic Triangle Wave Spectrogram"</span>)
 
 <span class="comment">%plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %-- with negative frequencies</span>
@@ -627,8 +627,8 @@ xx4 = Amp * (abs(qq4 - (0.5 * T)) - 0.25 * T);  <span class="comment">% Create t
 
 DBrange = 80; <span class="comment">% given value</span>
 
-figure(<span class="string">"Name"</span>,<span class="string">"Triangle Wave Spectrogram 2.2.3.b"</span>);
-title(<span class="string">"20-msec periodic Triangle Wave Spectrogram"</span>)
+figure(<span class="string">"Name"</span>,<span class="string">"4-msec periodic Triangle Wave Spectrogram"</span>);
+title(<span class="string">"4-msec periodic Triangle Wave Spectrogram"</span>)
 
 <span class="comment">%plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %-- with negative frequencies</span>
 
@@ -678,7 +678,7 @@ title(<span class="string">'dB-Spectrogram'</span>);
 </pre>
 <pre class="codeoutput">for the second ratio, the ratio of the amplitude of the third harmonic to the first harmonic is: 0.067999
 </pre>
-<img vspace="5" hspace="5" src="lab_s8_09.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_10.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_11.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_12.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_13.png" alt=""> <p class="footer">
+<img vspace="5" hspace="5" src="lab_s8_08.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_09.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_10.png" alt=""> <img vspace="5" hspace="5" src="lab_s8_11.png" alt=""> <p class="footer">
 <br>
 <a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024b</a>
 <br>
@@ -1163,7 +1163,7 @@ L_SECT_2 = T_SECT_2 * f_s1;  % Section length in terms of samples
 figure('Name','20 msec period Triangle Wave in Time Domain.');
 clf;
 plot(tt_2, xx2, 'b', 'LineWidth', 1.5);
-title('Triangle Wave in Time Domain');
+title('20 msec period Triangle Wave in Time Domain');
 xlabel('Time (s)');
 ylabel('Amplitude');
 grid on;
@@ -1171,7 +1171,7 @@ grid on;
 
 DBrange = 80; % given value
 
-figure("Name","Triangle Wave Spectrogram 2.2.3.b");
+figure("Name","20-msec periodic Triangle Wave Spectrogram");
 title("20-msec periodic Triangle Wave Spectrogram")
 
 %plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %REPLACE_WITH_DASH_DASH with negative frequencies
@@ -1224,8 +1224,8 @@ xx4 = Amp * (abs(qq4 - (0.5 * T)) - 0.25 * T);  % Create the triangle wave
 
 DBrange = 80; % given value
 
-figure("Name","Triangle Wave Spectrogram 2.2.3.b");
-title("20-msec periodic Triangle Wave Spectrogram")
+figure("Name","4-msec periodic Triangle Wave Spectrogram");
+title("4-msec periodic Triangle Wave Spectrogram")
 
 %plotspecDB(xx2, f_s, 4, 80), colorbar, grid on %REPLACE_WITH_DASH_DASH with negative frequencies
 
