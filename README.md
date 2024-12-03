@@ -74,6 +74,8 @@ The group members for this project are listed on top of this page in the header.
 The project work is expected to be completed collectively with the group members.
 
 ### Progress Notes
+<ins> Dec 3rd, 2024 : </ins> <br>
+ - Both labs are completed by the group members. <br>
 
 <ins> On Nov 17th, 2024 : </ins> <br>
  - Create the draft files and post them on the Github repo. <br>
@@ -89,7 +91,7 @@ The project work is expected to be completed collectively with the group members
  
 ### Time Expenditures
 
-<pre>Predicted Hours: 20h		Actual Hours:	h		 </pre>
+<pre>Predicted Hours: 20h		Actual Hours:	22h		 </pre>
 
 The actual hours recorded on top will reflect the time spent 
 on the project. It will exclude the extra time spent reading, researching, 
@@ -104,7 +106,11 @@ Have a wonderful day!
 
 ### Testing
 
-- 
+- You'll need MATLAB program installed to test the codes.
+- Find the related folders, either "LabP8_Exercise3" or "LabS8_Excersice2".
+- Open the folder and click the either ".m" or ".mlx" file.
+- Click run from the top menu. 
+- See the figures and results on the Command Window of the MATLAB.
 
 ### References:
 
@@ -112,7 +118,7 @@ Have a wonderful day!
 2. Proakis, John G., and Dimitris G. Manolakis. Digital Signal Processing. Prentice Hall, 2006. <br>
  
  
-![alt text](https://github.com/ggayliye/ECE6530_dsp)
+
 
 
 
